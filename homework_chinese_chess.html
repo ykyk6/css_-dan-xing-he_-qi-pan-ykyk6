@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            writing-mode: vertical-lr;
+            font-family: "標楷體";
+            font-size: 37px;  
+        }
+        .container{
+            display: flex;
+            margin: auto;
+            width: 1000px;
+            height: 800px;
+            justify-content: center;
+            align-items: center;
+        }
+        .font1{
+            width: 10%;
+            height: 95%;
+            line-height: 35px;
+        }
+        .font2{
+            width: 10%;
+            height: 95%;
+            line-height: 25px;
+        }
+        .chessbox1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 95%;
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+        .chessbox2{
+            display: flex;
+            width: 81%;
+            height: 85%;
+            background-color: #fff;
+            position: relative;
+        }
+        table{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        
+        td{
+        border:0.1px solid rgb(87, 86, 86);     
+        }
+        .chess{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            background-color:#fff;
+            z-index: 10;        
+            font-weight :500;
+        }
+        #chess1{
+            display: flex;
+            align-items:flex-start; 
+            color: #000;
+             font-family: "標楷體";
+            font-size: 30px;
+            text-align: center;
+            line-height: 43px;
+           
+        }
+        #chess1 :nth-child(1){
+            position: absolute;
+            right: 540px;
+            top: -15px;
+        } 
+        #chess1 :nth-child(2){
+            position: absolute;
+            right: 475px;
+            top: -15px;
+        } 
+        #chess1 :nth-child(3){
+            position: absolute;
+            right: 405px;
+            top: -15px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(4){
+            position: absolute;
+            right: 335px;
+            top: -15px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(5){
+            position: absolute;
+            right: 262px;
+            top: -15px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(6){
+            position: absolute;
+            right:192px;
+            top: -15px;
+            z-index: 10;
+        }
+    
+        #chess1 :nth-child(7){
+            position: absolute;
+            right:121px;
+            top: -15px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(8){
+            position: absolute;
+            right:50px;
+            top: -15px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(9){
+            position: absolute;
+            right:-18px;
+            top: -15px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(10){
+            position: absolute;
+            right: 540px;
+            top: 190px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(11){
+            position: absolute;
+            right: 475px;
+            top: 120px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(12){
+            position: absolute;
+            right: 405px;
+            top: 190px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(13){
+            position: absolute;
+            right: 262px;
+            top: 190px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(14){
+            position: absolute;
+            right: 121px;
+            top: 190px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(15){
+            position: absolute;
+            right: 50px;
+            top: 120px;
+            z-index: 10;
+        }
+        #chess1 :nth-child(16){
+            position: absolute;
+            right: -18px;
+            top: 190px;
+            z-index: 10;
+        }
+       /* 下部 */
+        #chess2{
+            display: flex;
+            align-items:flex-start; 
+            color:rgb(192, 5, 5);
+            font-family: "標楷體";
+            font-size: 30px;
+            text-align: center;
+            line-height: 40px;
+            
+        }
+        #chess2 :nth-child(1){
+            position: absolute;
+            right: 540px;
+            top: 615px;
+        } 
+        #chess2 :nth-child(2){
+            position: absolute;
+            right: 475px;
+            top: 615px;
+        } 
+        #chess2 :nth-child(3){
+            position: absolute;
+            right: 405px;
+            top: 615px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(4){
+            position: absolute;
+            right: 335px;
+            top: 615px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(5){
+            position: absolute;
+            right: 262px;
+            top: 615px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(6){
+            position: absolute;
+            right:192px;
+            top: 615px;
+            z-index: 10;
+        }
+    
+        #chess2 :nth-child(7){
+            position: absolute;
+            right:121px;
+            top:615px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(8){
+            position: absolute;
+            right:50px;
+            top: 615px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(9){
+            position: absolute;
+            right:-18px;
+            top: 615px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(10){
+            position: absolute;
+            right: 540px;
+            top: 400px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(11){
+            position: absolute;
+            right: 475px;
+            top: 470px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(12){
+            position: absolute;
+            right: 405px;
+            top: 400px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(13){
+            position: absolute;
+            right: 262px;
+            top: 400px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(14){
+            position: absolute;
+            right: 121px;
+            top: 400px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(15){
+            position: absolute;
+            right: 50px;
+            top: 470px;
+            z-index: 10;
+        }
+        #chess2 :nth-child(16){
+            position: absolute;
+            right: -18px;
+            top: 400px;
+            z-index: 10;
+        }
+        .sen1{
+            width: 87px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(225deg);
+            position: absolute;
+            top: 41px;
+            left: 210px;
+        }
+        .sen2{
+            width: 87px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(-225deg);
+            position: absolute;
+            top: 41px;
+            left: 270px;
+        }
+        .sen3{
+            width: 100px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(-225deg);
+            position: absolute;
+            top: 105px;
+            left: 199px;
+        }
+        .sen4{
+            width: 100px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(225deg);
+            position: absolute;
+            top: 105px;
+            left: 267px;
+        }
+        .sen5{
+            width: 87px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(-225deg);
+            position: absolute;
+            bottom: 41px;
+            left: 206px;
+        }
+        .sen6{
+            width: 87px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(225deg);
+            position: absolute;
+            bottom: 41px;
+            left: 270px;
+        }
+        .sen7{
+            width: 100px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(225deg);
+            position: absolute;
+            bottom: 108px;
+            left: 196px;
+        }
+        .sen8{
+            width: 100px;
+            height: 0.5px;
+            background-color: #000;
+            transform: rotate(-225deg);
+            position: absolute;
+            bottom: 108px;
+            left: 267px;
+        }
+       #middle1{
+           font-family: "標楷體";
+           font-size: 39px;
+           z-index: 10;
+          position: absolute;
+          top: 46%;
+          left:18% ;
+
+           
+       }
+       #middle2{
+        display: inline-block;
+           font-family: "標楷體";
+           font-size: 39px;
+           position: absolute;
+          top: 46%;
+          left:68% ;
+          
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="font1"><p>棋盤裡，車無輪，馬無韁，叫聲將軍提防提防</p></div>
+        <div class="chessbox1"> 
+           
+            <div class="chessbox2">
+              
+                <div class="sen1"></div>
+                <div class="sen2"></div>
+                <div class="sen3"></div>
+                <div class="sen4"></div>
+                <div class="sen5"></div>
+                <div class="sen6"></div>
+                <div class="sen7"></div>
+                <div class="sen8"></div>
+                <div id="middle1">楚河</div> <div id="middle2">漢界</div>
+                <table cellspacing="0" cellpadding="0"  >
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="8" ></td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>  
+            <div id="chess1">
+            <!-- 上部1 -->
+            <div class="chess">車</div>
+            <div class="chess">馬</div>
+            <div class="chess">象</div>
+            <div class="chess">士</div>
+            <div class="chess">將</div>
+            <div class="chess">士</div>
+            <div class="chess">象</div>
+            <div class="chess">馬</div>
+            <div class="chess">車</div>
+            <!-- 上部2 -->
+            <div class="chess">卒</div>
+            <div class="chess">包</div>
+            <div class="chess">卒</div>
+            <div class="chess">卒</div>
+            <div class="chess">卒</div>
+            <div class="chess">包</div>
+            <div class="chess">卒</div>
+            
+            <div id="chess2">
+             <!-- 下部1 -->
+             <div class="chess">俥</div>
+             <div class="chess">傌</div>
+             <div class="chess">相</div>
+             <div class="chess">仕</div>
+             <div class="chess">帥</div>
+             <div class="chess">仕</div>
+             <div class="chess">相</div>
+             <div class="chess">傌</div>
+             <div class="chess">俥</div>
+             <!-- 下部2 -->
+             <div class="chess">兵</div>
+             <div class="chess">炮</div>
+             <div class="chess">兵</div>
+             <div class="chess">兵</div>
+             <div class="chess">兵</div>
+             <div class="chess">炮</div>
+             <div class="chess">兵</div>
+        </div>
+        </div>
+            </div>
+        </div>
+        <div class="font2"><p>圖畫裡，龍不吟，虎不笑，小小書僮可笑可笑</p></div>
+
+    </div>
+</body>
+</html>
